@@ -17,9 +17,10 @@ class App extends Component {
     return (
       <div>
         <Hello name={this.state.name} />
-        <p>Start editing to see some magic happen :)</p>
+        <p>good good study, day day up!</p>
+        <p>study hard, improve every day!</p>
         <TestState />
-        <TestEffect />
+        {/* <TestEffect /> */}
       </div>
     );
   }
