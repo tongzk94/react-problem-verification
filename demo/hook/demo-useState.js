@@ -2,7 +2,6 @@ import React, { useState, memo } from "react";
 
 const Child = memo(({ data }) => {
   // rose --- jack
-  // 测试提交
   console.log("child render...", data);
   const [name, setName] = useState(data);
   return (
@@ -15,7 +14,7 @@ const Child = memo(({ data }) => {
   );
 });
 
-const Hook = () => {
+const TestState = () => {
   console.log("Hook render...");
   const [count, setCount] = useState(0);
   const [name, setName] = useState("rose");
@@ -30,4 +29,4 @@ const Hook = () => {
   );
 };
 
-export default Hook;
+export default TestState;

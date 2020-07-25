@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import Hello from "./Hello";
 import "./style.css";
-import Hook from "./demo/hook/demo-useState";
+import TestState from "./demo/hook/demo-useState";
+import TestEffect from "./demo/hook/demo-useEffect";
 
 class App extends Component {
   constructor() {
@@ -17,7 +18,8 @@ class App extends Component {
       <div>
         <Hello name={this.state.name} />
         <p>Start editing to see some magic happen :)</p>
-        <Hook />
+        <TestState />
+        <TestEffect />
       </div>
     );
   }

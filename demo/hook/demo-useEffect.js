@@ -1,4 +1,4 @@
-import React, { useState, memo } from "react";
+import React, { useState, useEffect } from "react";
 
 const TestEffete = () => {
   console.log("Hook render...");
