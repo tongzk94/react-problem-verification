@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 /**
- * 一个组件多次调用useState和useEffect，它们是完全独立的
+ * 相当于全局变量
  */
-const TestEffete = () => {
+const TestRef = () => {
   console.log("Hook render...");
 
-  // 点击事件的count可以随点击次数增加
-  // 定时器拿到的count始终为0-->1
+  // count可随时间的增加
   const [count, setCount] = useState(0);
+  const countRef = useRef(0);
   useEffect(() => {
-    // use effect... 0
     console.log("use effect...", count);
     const timer = setInterval(() => {
-      // timer...count: 0
-      console.log("timer...count:", count);
-      setCount(count + 1);
+      console.log("timer...count:", countRef.current);
+      setCount(++countRef.current);
     }, 1000);
     return () => clearInterval(timer);
   }, []);
@@ -28,4 +26,4 @@ const TestEffete = () => {
   );
 };
 
-export default TestEffete;
+export default TestRef;

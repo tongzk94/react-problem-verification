@@ -1,7 +1,9 @@
 import React, { useState, memo } from "react";
 
+/**
+ * useState的初始值，只在第一次有效
+ */
 const Child = memo(({ data }) => {
-  // useState的初始值，只在第一次有效
   // rose --- jack
   console.log("child render...", data);
   const [name, setName] = useState(data);

@@ -4,6 +4,7 @@ import Hello from "./Hello";
 import "./style.css";
 import TestState from "./demo/hook/demo-useState";
 // import TestEffect from "./demo/hook/demo-useEffect";
+import TestRef from "./demo/hook/demo-useRef";
 
 class App extends Component {
   constructor() {
@@ -19,8 +20,9 @@ class App extends Component {
         <Hello name={this.state.name} />
         <p>good good study, day day up!</p>
         <p>study hard, improve every day!</p>
-        <TestState />
+        <TestRef />
         {/* <TestEffect /> */}
+        <TestState />
       </div>
     );
   }
