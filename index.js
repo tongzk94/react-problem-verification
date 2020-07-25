@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import Hello from "./Hello";
 import "./style.css";
 import TestState from "./demo/hook/demo-useState";
-import TestEffect from "./demo/hook/demo-useEffect";
+// import TestEffect from "./demo/hook/demo-useEffect";
 
 class App extends Component {
   constructor() {
