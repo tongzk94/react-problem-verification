@@ -2,6 +2,7 @@ import React, { useState, memo } from "react";
 
 const Child = memo(({ data }) => {
   // rose --- jack
+  // 测试提交
   console.log("child render...", data);
   const [name, setName] = useState(data);
   return (
