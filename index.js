@@ -7,7 +7,7 @@ import "./style.css";
 // import TestRef from "./demo/hook/demo-useRef";
 // import TestReducer from "./demo/hook/demo-useReducer";
 // import TestReducer2 from "./demo/hook/demo-useReducer2";
-import TestClosure from "./demo/closure/demo-TestClosure";
+import TestClosure from "./demo/js/closure/demo-closure";
 
 class App extends Component {
   constructor() {
