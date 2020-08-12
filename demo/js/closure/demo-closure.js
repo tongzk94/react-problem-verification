@@ -1,6 +1,10 @@
 import React from "react";
+
 /**
- * 引用的变量可能发生变化
+ * 闭包问题
+ * 1. 引用的变量可能发生变化
+ * 2. this指向问题
+ * 3. 使用闭包实现递归
  */
 const TestClosure = () => {
   console.log("TestClosure render...");
@@ -28,11 +32,35 @@ const TestClosure = () => {
       })(i);
     }
     return result;
-  }
+  };
   const data2 = outer2();
   data2.map(item => item());
 
-  return <div />;
+  const data3 = {
+    name: "object",
+    getName: function() {
+      // object
+      console.log(`1--${this.name}`);
+      return function() {
+        // undefind
+        // 因为里面的闭包函数是在window作用域下执行的，也就是说，this指向windows
+        console.log(`2--${this.name}`);
+      };
+    }
+  };
+  // data3.getName()();
+
+  // 实际上起作用的是闭包函数f，而不是外面的函数newFactorial
+  const newFactorial = function f(num) {
+    if (num < 1) {
+      return 1;
+    } else {
+      return num * f(num - 1);
+    }
+  };
+  const data4 = newFactorial(5);
+
+  return <div>{data4}</div>;
 };
 
 export default TestClosure;
