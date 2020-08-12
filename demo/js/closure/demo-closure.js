@@ -13,6 +13,7 @@ const TestClosure = () => {
     var result = [];
     for (var i = 0; i < 10; i++) {
       result[i] = function() {
+        // 全为10
         console.log(`outer--${i}`);
       };
     }
@@ -20,6 +21,18 @@ const TestClosure = () => {
   };
   const data = outer();
   data.map(item => item());
+
+  const outer3 = function() {
+    var result = [];
+    for (let i = 0; i < 10; i++) {
+      result[i] = function() {
+        console.log(`outer3--${i}`);
+      };
+    }
+    return result;
+  };
+  const data5 = outer();
+  data5.map(item => item());
 
   const outer2 = function() {
     var result = [];
